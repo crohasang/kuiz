@@ -1,50 +1,29 @@
-# React + TypeScript + Vite
+# 💭 KUIZ (Konkuk + UI + Quiz)
+UI/UX 디자인 학습을 위한 퀴즈 플랫폼
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🎯 개발 목표 
+- React 기반의 웹 어플리케이션 구현
+- 랭킹 업데이트 및 확인 기능 구현
+- 랜덤 문제 출력 기능 구현  
+- 오답 처리된 문제 확인 기능 구현
+- 북마크 기능 구현
+- 다양한 퀴즈 문제 기획
 
-Currently, two official plugins are available:
+## 📝 개발 내용 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 📒 UX 디자인 개념 노트 
+- 평상시 공부 하듯이, 노트 형식으로 UX 디자인 지식을 제공
+- 퀴즈를 풀기 전 기초를 쌓기 위해서, 혹은 퀴즈를 풀다 헷갈리는 개념을 다시 확인할 수 있게 해주는 기능
 
-## Expanding the ESLint configuration
+### 🎲 퀴즈 순서 랜덤화 
+- 정해진 순서가 아니라 랜덤한 순서와 난이도의 퀴즈들을 제공
+- 초급 퀴즈, 중급 퀴즈, 고급 퀴즈 옵션을 제공
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 📚 UX 퀴즈 오답 노트 
+- 퀴즈를 풀다가 틀린 것들을 한번에 모아서 보여주는 노트
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 🛠️ 기술 스택 
+- React(vite)
+- TypeScript 
+- emotion
