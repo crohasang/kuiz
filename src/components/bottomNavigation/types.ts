@@ -13,4 +13,5 @@ export interface NavItem {
     id: string;
     label: string;
     icon: ComponentType<IconProps>;
+    path: string;
 }
