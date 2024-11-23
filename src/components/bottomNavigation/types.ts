@@ -1,4 +1,4 @@
-import { ComponentType } from "react";
+import { FunctionComponent, SVGProps } from "react";
 
 export interface NavItemProps {
     isActive: boolean;
@@ -12,6 +12,6 @@ export interface IconProps {
 export interface NavItem {
     id: string;
     label: string;
-    icon: ComponentType<IconProps>;
+    icon: FunctionComponent<SVGProps<SVGSVGElement>>;
     path: string;
 }
