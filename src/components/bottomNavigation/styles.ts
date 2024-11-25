@@ -12,6 +12,7 @@ export const NavigationContainer = styled.nav`
   justify-content: space-around;
   align-items: center;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999; /* 가장 상단에 위치 */
 `;
 
 export const NavItemButton = styled.button<NavItemProps>`
