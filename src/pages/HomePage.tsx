@@ -2,6 +2,7 @@
 import { css } from '@emotion/react';
 import RoundedBackground from '../components/homePage/RoundedBackground';
 import ProfileEllipse from '../components/homePage/ellipse/ProfileEllipse';
+import Line from '../assets/line.svg?react';
 
 const HomePage = () => {
   return (
@@ -55,6 +56,23 @@ const HomePage = () => {
             font-style: normal;
             font-weight: 600;
             line-height: normal;`}>3위</div>
+            <div css={css`
+            margin-top: 8px;
+            color: var(--gray20, #797979);
+            text-align: center;
+            font-family: LeeSeoyun;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;`}>
+              70점</div>
+            <div css={css`
+            margin-top: 23px;
+            display: flex;
+            justify-content: center;
+            `}>
+              <Line />
+            </div>
         </RoundedBackground>
       </div>
     </div>
