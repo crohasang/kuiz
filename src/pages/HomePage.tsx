@@ -53,10 +53,8 @@ const HomePage = () => {
             font-family: Pretendard;
             font-size: 35px;
             font-style: normal;
-font-weight: 600;
-line-height: normal;`}>
-  3위
-</div>
+            font-weight: 600;
+            line-height: normal;`}>3위</div>
         </RoundedBackground>
       </div>
     </div>
