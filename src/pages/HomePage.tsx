@@ -37,9 +37,26 @@ const HomePage = () => {
           <ProfileEllipse />
         </div>
         <RoundedBackground>
-          <div css={css`margin-top: 60px;`}>
-            <h1>HomePage</h1>
-          </div>
+            <div css={css`
+            margin-top: 45px;
+            color: #000;
+            text-align: center;
+            font-family: LeeSeoyun;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;`}>UX디자인</div>
+            <div css={css`
+            margin-top: 24px;
+            color: var(--brown1, #BA6C25);
+            text-align: center;
+            font-family: Pretendard;
+            font-size: 35px;
+            font-style: normal;
+font-weight: 600;
+line-height: normal;`}>
+  3위
+</div>
         </RoundedBackground>
       </div>
     </div>
