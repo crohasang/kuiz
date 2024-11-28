@@ -13,7 +13,7 @@ export const NavItem = ({ item, isActive, onClick }: NavItemComponentProps) => {
     return (
         <NavItemButton isActive = {isActive} onClick={onClick}>
             <IconWrapper>
-                <Icon size={24} color={isActive ? '#BA6C25' : '#28292C'} />
+                <Icon />
             </IconWrapper>
             <Label>{item.label}</Label>
         </NavItemButton>
