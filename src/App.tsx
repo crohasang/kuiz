@@ -4,16 +4,18 @@ import QuizMain from './pages/QuizPage/QuizMain';
 import UserPage from './pages/UserPage';
 import NotFoundPage from './pages/NotFoundPage';
 import BottomNavigation from './components/bottomNavigation';
+import LoginPage from './pages/LoginPage';
 
 //본래의 App Component
 const App = () => {
   const location = useLocation();
-  const hideBottomNavPaths = ['/quiz/screen1', '/quiz/screen2', '/quiz/screen3'];
+  const hideBottomNavPaths = ['/login', '/quiz/screen1', '/quiz/screen2', '/quiz/screen3'];
   const shouldHideBottomNav = hideBottomNavPaths.includes(location.pathname);
 
   return (
     <>
       <Routes>
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/quiz/*" element={<QuizMain />} />
         <Route path="/user" element={<UserPage />} />
