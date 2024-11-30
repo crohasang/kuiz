@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 import React from 'react';
 
 interface PrimaryButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,18 +12,7 @@ const PrimaryButton = (props: PrimaryButtonProps) => {
   const { title, onClick, color = '#E39E5F', ...rest } = props;
   return (
     <Button onClick={onClick} color={color} {...rest}>
-      <div
-        css={css`
-          font-family: 'Pretendard';
-          font-size: 1.6rem;
-          line-height: 24px;
-          text-align: center;
-          color: #fff;
-          font-weight: 500;
-        `}
-      >
-        {title}
-      </div>
+      {title}
     </Button>
   );
 };
@@ -36,9 +24,11 @@ const Button = styled.button<{
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 12px;
+  padding: 16px 0 15px;
   color: #fff;
   cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 700;
   background-color: ${({ color }) => color};
   border-radius: 8px;
 `;
