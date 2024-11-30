@@ -1,15 +1,5 @@
 import styled from '@emotion/styled';
-import { css, keyframes } from '@emotion/react';
-
-// @font-face로 외부 폰트 정의
-const leeSeoyunFont = css`
-  @font-face {
-    font-family: 'LeeSeoyun';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-`;
+import { keyframes } from '@emotion/react';
 
 //animation keyframes인 moveUp 정의(상단 background에다가 적용할 것임 / 올라가는 효과)
 const moveUp = keyframes`
@@ -21,7 +11,7 @@ const moveUp = keyframes`
   }
 `;
 
-// 애니메이션을 위한 keyframes 정의 
+// 애니메이션을 위한 keyframes 정의
 // scaleAndShiftRight, scaleDownAndShiftRight는 왼쪽 그림이 정답일 때 사용할 2가지 keyframes 세트 (오른쪽으로 살짝 이동하며 확대)
 const scaleAndShiftRight = keyframes`
   from {
@@ -31,7 +21,6 @@ const scaleAndShiftRight = keyframes`
     transform: translateX(10%) translateY(-25%) scale(1.2); /* 약간 오른쪽으로 이동하며 확대 */
   }
 `;
-
 
 const scaleDownAndShiftRight = keyframes`
   from {
@@ -91,13 +80,12 @@ export const TopBackground = styled.div`
 `;
 
 // 제목 스타일
-export const Title = styled.h1<{ color?: string }>`
-  ${leeSeoyunFont}
+export const Title = styled.h1<{ color?: string; font?: string }>`
   color: ${({ color }) => color || '#5a3220'}; /* 기본 색상은 #5a3220 */
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
   margin-bottom: 16px;
-  font-family: 'LeeSeoyun', Arial, sans-serif;
+  font-family: ${({ font }) => font || 'LeeSeoyun'};
 
   @media screen and (min-width: 1200px) {
     font-size: 2rem;
@@ -110,7 +98,7 @@ export const Button = styled.button`
   max-width: 200px;
   height: 300px; /* 고정된 버튼 높이 */
   margin: 8px; /* 간격 조정 */
-  font-size: 1.1rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #ba6c25;
   background: #ffffff;
@@ -143,7 +131,7 @@ export const Button = styled.button`
   }
 
   @media (min-width: 1200px) {
-    font-size: 1.4rem;
+    font-size: 2rem;
   }
 
   .overlay-text {
@@ -151,7 +139,7 @@ export const Button = styled.button`
     top: -180px;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 1.4rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #ba6c25;
   }
@@ -164,11 +152,9 @@ export const ButtonContainer = styled.div`
   align-items: center;
   width: 100%;
   margin-top: 20px;
-
-  @media (max-width: 400px) {
-    margin-top: -5px;
+  @media (max-height: 840px) {
+    margin-top: -45px;
   }
-
 `;
 
 // 해설 컨테이너
@@ -177,10 +163,11 @@ export const ExplanationContainer = styled.div`
   bottom: 0;
   left: 50%; /* 부모 컨테이너 기준 왼쪽에서 50% */
   transform: translateX(-50%); /* 자기 자신의 너비의 절반만큼 왼쪽으로 이동해 가운데 정렬 */
-  background-color: rgba(251, 229, 208, 0); /* 기존 색상에 투명도 추가 (0.8) */;
+  background-color: rgba(251, 229, 208, 0); /* 기존 색상에 투명도 추가 (0.8) */
   padding: 4px;
   text-align: left;
-  font-size: 1rem;
+  font-size: 2rem;
+  font-family: 'Pretendard';
   color: #5a3220;
   width: 90%;
   word-wrap: break-word; /* 텍스트가 너무 길면 자동으로 줄바꿈 */
@@ -189,7 +176,7 @@ export const ExplanationContainer = styled.div`
   z-index: 10;
 
   .explanation-title {
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #5a3220;
   }
@@ -203,20 +190,19 @@ export const ExplanationContainer = styled.div`
   }
 
   .explanation {
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: normal;
     color: #5a3220;
     margin: 0 0;
   }
 
   @media screen and (max-width: 768px) {
-
     .explanation-title {
-      font-size: 0.8rem;
+      font-size: 1.6rem;
     }
-    
+
     .explanation {
-      font-size: 0.8rem;
+      font-size: 1.6rem;
     }
 
     .divider {
@@ -232,7 +218,7 @@ export const NextButton = styled.button`
   padding: 12px 24px;
   background-color: #e39e5f;
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.6rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;

@@ -1,12 +1,14 @@
-import styled from "@emotion/styled";
-import { NavItemProps } from "./types";
+import styled from '@emotion/styled';
+import { NavItemProps } from './types';
 
 export const NavigationContainer = styled.nav`
   position: fixed;
+  max-width: 840px;
+  margin: 0 auto;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 70px;
   background: white;
   display: flex;
   justify-content: space-around;
@@ -34,12 +36,11 @@ export const NavItemButton = styled.button<NavItemProps>`
 `;
 
 export const IconWrapper = styled.div`
-  font-size: 24px;
+  font-size: 2.4rem;
   margin-bottom: 4px;
 `;
 
 export const Label = styled.span`
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 500;
 `;
-
