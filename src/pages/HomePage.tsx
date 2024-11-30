@@ -5,29 +5,29 @@ import ProfileEllipse from '../components/homePage/ellipse/ProfileEllipse';
 import Line from '../assets/line.svg?react';
 import RankingCard from '../components/homePage/rankingCard/RankingCard';
 import { Container } from '../components/common/container/Container';
+import { Col, Row } from '../components/common/flex/Flex';
 
 const HomePage = () => {
   return (
     <Container>
-      <div
+      <Col
         css={css`
           position: relative;
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
         `}
+        alignItems="center"
       >
-        <div
-          css={css`
-            position: absolute;
-            top: 38px;
-            z-index: 2;
-          `}
-        >
-          <ProfileEllipse />
-        </div>
         <RoundedBackground>
+          <div
+            css={css`
+              position: absolute;
+              top: -35px;
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: 2;
+            `}
+          >
+            <ProfileEllipse size="70px" />
+          </div>
           <div
             css={css`
               margin-top: 45px;
@@ -79,15 +79,20 @@ const HomePage = () => {
           >
             <Line />
           </div>
-          <div>
-            {/* <RankingCard 
+          <Row padding={'62px 0 32px'} gap={8}>
+            <RankingCard rank={1} title="과탑은 나의것" score={70} />
+            <RankingCard
+              css={css`
+                margin-top: -30px;
+              `}
               rank={1}
-              title='과탑은 나의것'
+              title="과탑은 나의것"
               score={70}
-              /> */}
-          </div>
+            />
+            <RankingCard rank={1} title="과탑은 나의것" score={70} />
+          </Row>
         </RoundedBackground>
-      </div>
+      </Col>
     </Container>
   );
 };

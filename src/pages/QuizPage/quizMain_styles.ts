@@ -14,7 +14,7 @@ export const TopBackground = styled.div`
 
 export const BottomBackground = styled.div`
   position: absolute;
-  bottom: -10%;
+  bottom: -5%;
   left: 50%;
   width: 200%;
   height: 70%;
@@ -33,12 +33,11 @@ export const BottomBackground = styled.div`
   }
 `;
 
-export const Title = styled.h1`
+export const Title = styled.span`
   font-family: LeeSeoyoon;
   color: #ffffff;
   font-size: 1.8rem;
   text-align: center;
-  margin-bottom: 30px;
   font-family: 'LeeSeoyun';
 
   @media screen and (min-width: 1200px) {
@@ -57,7 +56,7 @@ export const Button = styled.button<{ level: string }>`
   color: #ffffff;
   background: #f4a261;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -75,15 +74,14 @@ export const Button = styled.button<{ level: string }>`
 `;
 
 export const FloatingButton = styled.button`
-  position: fixed; /* 화면 고정 */
-  bottom: 80px; /* 하단 여백 */
+  position: absolute; /* 화면 고정 */
+  bottom: 15px; /* 하단 여백 */
   right: 20px; /* 오른쪽 여백 */
-  width: 56px; /* 버튼 크기 */
-  height: 56px;
+  padding: 8px; /* 내부 여백 */
   border-radius: 50%; /* 원형 버튼 */
   background-color: #f4a261; /* 버튼 배경색 */
   border: none; /* 테두리 제거 */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+  filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
   display: flex;
   justify-content: center;
   align-items: center;
