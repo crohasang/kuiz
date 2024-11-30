@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import RoundedBackground from '../components/homePage/RoundedBackground';
 import ProfileEllipse from '../components/homePage/ellipse/ProfileEllipse';
 import Line from '../assets/line.svg?react';
+import RankingCard from '../components/homePage/rankingCard/RankingCard';
 
 const HomePage = () => {
   return (
@@ -72,6 +73,13 @@ const HomePage = () => {
             justify-content: center;
             `}>
               <Line />
+            </div>
+            <div>
+              {/* <RankingCard 
+              rank={1}
+              title='과탑은 나의것'
+              score={70}
+              /> */}
             </div>
         </RoundedBackground>
       </div>
