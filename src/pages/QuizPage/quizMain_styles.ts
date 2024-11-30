@@ -1,24 +1,4 @@
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
-
-// @font-face로 외부 폰트(leeSeoyunFont) 정의
-const leeSeoyunFont = css`
-  @font-face {
-    font-family: 'LeeSeoyun';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-`;
-
-//최상위 컨테이너 설정
-export const Container = styled.div`
-  position: absolute;
-  top: 0%;
-  width: 100%;
-  height: calc(100vh - 60px); /* BottomNavigation 높이를 제외한 영역 */
-  overflow: hidden; /* 스크롤 제거 */
-`
 
 export const TopBackground = styled.div`
   position: relative;
@@ -34,7 +14,7 @@ export const TopBackground = styled.div`
 
 export const BottomBackground = styled.div`
   position: absolute;
-  bottom: -20%;
+  bottom: -10%;
   left: 50%;
   width: 200%;
   height: 70%;
@@ -54,26 +34,25 @@ export const BottomBackground = styled.div`
 `;
 
 export const Title = styled.h1`
-  ${leeSeoyunFont} /* 외부 폰트 정의 추가 */
+  font-family: LeeSeoyoon;
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   text-align: center;
   margin-bottom: 30px;
-  font-family: 'LeeSeoyun', Arial, sans-serif; /* LeeSeoyun 폰트 적용 */
+  font-family: 'LeeSeoyun';
 
   @media screen and (min-width: 1200px) {
     font-size: 2rem;
   }
-
 `;
 
 export const Button = styled.button<{ level: string }>`
-  ${leeSeoyunFont} /* 외부 폰트 정의 추가 */
+  font-family: 'LeeSeoyun';
   width: 80%;
   max-width: 300px;
   padding: 20px;
   margin: 16px 0;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #ffffff;
   background: #f4a261;
@@ -91,7 +70,7 @@ export const Button = styled.button<{ level: string }>`
 
   @media (min-width: 1200px) {
     padding: 20px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 `;
 
@@ -110,7 +89,9 @@ export const FloatingButton = styled.button`
   align-items: center;
   cursor: pointer; /* 클릭 가능한 버튼으로 설정 */
   z-index: 3; /* TopBackground 아래에 위치 */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* 애니메이션 효과 */
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease; /* 애니메이션 효과 */
 
   &:active {
     transform: scale(0.95); /* 클릭 시 살짝 축소 */
@@ -122,4 +103,3 @@ export const FloatingButton = styled.button`
     fill: white; /* 아이콘 색상 */
   }
 `;
-

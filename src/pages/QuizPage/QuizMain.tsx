@@ -1,6 +1,7 @@
-import { TopBackground, BottomBackground, Title, Button, Container, FloatingButton } from './quizMain_styles';
+import { TopBackground, BottomBackground, Title, Button, FloatingButton } from './quizMain_styles';
+import { Container } from '../../components/common/container/Container';
 import MenuBookIcon from '../../assets/menu_book.svg';
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import QuizScreen1 from './QuizScreen1';
 
 //Quiz 메인 페이지
@@ -16,9 +17,15 @@ function QuizMainContent() {
         </Title>
       </TopBackground>
       <BottomBackground>
-        <Button level="1" onClick={() => navigate("/quiz/screen1")}>Level 01</Button>
-        <Button level="2" onClick={() => navigate("/quiz/screen2")}>Level 02</Button>
-        <Button level="3" onClick={() => navigate("/quiz/screen3")}>Level 03</Button>
+        <Button level="1" onClick={() => navigate('/quiz/screen1')}>
+          Level 01
+        </Button>
+        <Button level="2" onClick={() => navigate('/quiz/screen2')}>
+          Level 02
+        </Button>
+        <Button level="3" onClick={() => navigate('/quiz/screen3')}>
+          Level 03
+        </Button>
       </BottomBackground>
       {/* 플로팅 버튼 */}
       <FloatingButton>
@@ -41,4 +48,3 @@ function QuizMain() {
 }
 
 export default QuizMain;
-
