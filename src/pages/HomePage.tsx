@@ -79,7 +79,7 @@ const HomePage = () => {
           >
             <Line />
           </div>
-          <Row padding={'62px 0 32px'} gap={8}>
+          <Row justifyContent="center" padding={'62px 0 32px'} gap={8}>
             <RankingCard rank={1} title="과탑은 나의것" score={70} />
             <RankingCard
               css={css`
