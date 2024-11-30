@@ -1,28 +1,26 @@
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import QuizMain from "./pages/QuizPage/QuizMain";
-import UserPage from "./pages/UserPage";
-import NotFoundPage from "./pages/NotFoundPage";
-import BottomNavigation from "./components/bottomNavigation";
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import QuizMain from './pages/QuizPage/QuizMain';
+import UserPage from './pages/UserPage';
+import NotFoundPage from './pages/NotFoundPage';
+import BottomNavigation from './components/bottomNavigation';
 
 //본래의 App Component
 const App = () => {
   const location = useLocation();
-  const hideBottomNavPaths = ["/quiz/screen1", "/quiz/screen2", "/quiz/screen3"];
+  const hideBottomNavPaths = ['/quiz/screen1', '/quiz/screen2', '/quiz/screen3'];
   const shouldHideBottomNav = hideBottomNavPaths.includes(location.pathname);
 
   return (
-    <div className="app">
-      <main className="main-content">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/quiz/*" element={<QuizMain />} />
-          <Route path="/user" element={<UserPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </main>
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/quiz/*" element={<QuizMain />} />
+        <Route path="/user" element={<UserPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
       {!shouldHideBottomNav && <BottomNavigation />}
-    </div>
+    </>
   );
 };
 
