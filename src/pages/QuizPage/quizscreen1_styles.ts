@@ -152,9 +152,8 @@ export const ButtonContainer = styled.div`
   align-items: center;
   width: 100%;
   margin-top: 20px;
-
-  @media (max-width: 400px) {
-    margin-top: -5px;
+  @media (max-height: 840px) {
+    margin-top: -45px;
   }
 `;
 
@@ -199,11 +198,11 @@ export const ExplanationContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     .explanation-title {
-      font-size: 0.8rem;
+      font-size: 1.6rem;
     }
 
     .explanation {
-      font-size: 0.8rem;
+      font-size: 1.6rem;
     }
 
     .divider {
