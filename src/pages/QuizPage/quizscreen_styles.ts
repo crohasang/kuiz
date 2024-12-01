@@ -229,7 +229,7 @@ export const QuestionContainer = styled.div`
     font-family: 'Pretendard';
     font-size: 1.8rem;
     font-weight: 500;
-    color: #5a3220;
+    color: #9C5D23;
     margin: 0 0;
     margin-bottom: 20px;
   }
@@ -239,7 +239,7 @@ export const QuestionContainer = styled.div`
 export const InputContainer = styled.div`
   display: flex;
   align-items: center; /* 세로 정렬 */
-  justify-content: flex-start; /* 입력 텍스트와 InputBox를 왼쪽 정렬 */
+  justify-content: center;
   width: 100%; /* 부모 컨테이너의 전체 너비 */
   padding: 20px; 
   margin-top: 28px;
@@ -248,9 +248,8 @@ export const InputContainer = styled.div`
   .inputLabel {
     font-family: 'Pretendard';
     font-size: 16px;
-    font-weight: 500;
-    color: #5a3220; /* 텍스트 색상 */#BA6C25
-    margin-right: 20px; /* InputBox와의 간격 */
+    font-weight: 600;
+    color: #9C5D23; /* 텍스트 색상 */
     white-space: nowrap; /* 텍스트 줄바꿈 방지 */
   }
 `;
@@ -259,17 +258,18 @@ export const InputContainer = styled.div`
 export const InputBox = styled.input`
   width: 100%;
   border: none;
-  border-bottom: 2px solid #d58c56; /* 입력란 밑줄 */
+  border-bottom: 1px solid #9C5D23; /* 입력란 밑줄 */
   font-size: 16px;
   padding: 5px;
   margin-left: 8px;
   text-align: center;
   outline: none;
-  color: #a8683b; /* 입력 텍스트 색상 */
+  font-weight: 600;
+  color: #9C5D23; /* 입력 텍스트 색상 */
   background: none;
 
   &::placeholder {
-    color: #d58c56;
+    color: #9C5D23;
     opacity: 0.7; /* 플레이스홀더 색상 */
   }
 `;

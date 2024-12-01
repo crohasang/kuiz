@@ -94,12 +94,20 @@ function QuizScreen2() {
                     <span className="question">{question}</span>
                 </QuestionContainer>
                 <InputContainer>
-                    <span className="inputLabel">입력 :</span>
-                    <InputBox
-                        type="text"
-                        value={inputAnswer || ""}
-                        onChange={(e) => setInputAnswer(e.target.value)}   
-                    />
+                {
+                    !showExplanation ? (
+                        <>
+                        <span className="inputLabel">입력 :</span>
+                        <InputBox
+                            type="text"
+                            value={inputAnswer || ""}
+                            onChange={(e) => setInputAnswer(e.target.value)}   
+                        />
+                        </>
+                    ) : (
+                        <span className="inputLabel">정답 : {correctAnswer}</span>
+                    )
+                }
                 </InputContainer>
             </BottomBackground>
             {/* 해설 및 '다음' 혹은 '제출' 버튼 */}
