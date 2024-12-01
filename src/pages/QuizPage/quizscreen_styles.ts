@@ -151,7 +151,7 @@ export const ButtonContainer = styled.div`
   justify-content: space-around; /* 버튼 사이 간격 균등 배분 */
   align-items: center;
   width: 100%;
-  margin-top: 20px;
+  margin-top: -20px;
   @media (max-height: 840px) {
     margin-top: -45px;
   }
@@ -211,26 +211,65 @@ export const ExplanationContainer = styled.div`
   }
 `;
 
-// 다음 버튼 스타일
-export const NextButton = styled.button`
-  margin-top: 16px; /* 위의 여유 공간 */
-  margin-bottom: 16px; /* 하단 간격 */
-  padding: 12px 24px;
-  background-color: #e39e5f;
-  color: #ffffff;
-  font-size: 1.6rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+// 문제 컨테이너 (세로 정렬)
+export const QuestionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   width: 100%;
-  box-sizing: border-box; /* 패딩 포함하여 크기 계산 */
+  padding: 20px;
+  margin-top: -52px; /* 약간 컨테이너를 중앙에서 위쪽으로 올리기 */
+  max-width: 340px;
+  word-wrap: break-word; /* 텍스트가 너무 길면 자동으로 줄바꿈 */
+  overflow-wrap: break-word; /* 최신 브라우저 호환성 */
+  white-space: normal; /* 기본 줄바꿈 동작 */
 
-  &:hover {
-    background-color: #d2884f;
+  .question {
+    font-family: 'Pretendard';
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #5a3220;
+    margin: 0 0;
+    margin-bottom: 20px;
   }
+`;
 
-  &:active {
-    background-color: #c27845;
+//Input(입력란) 관련한 컴포넌트
+export const InputContainer = styled.div`
+  display: flex;
+  align-items: center; /* 세로 정렬 */
+  justify-content: flex-start; /* 입력 텍스트와 InputBox를 왼쪽 정렬 */
+  width: 100%; /* 부모 컨테이너의 전체 너비 */
+  padding: 20px; 
+  margin-top: 28px;
+  max-width: 340px; /* 고정된 최대 너비 */
+
+  .inputLabel {
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 500;
+    color: #5a3220; /* 텍스트 색상 */#BA6C25
+    margin-right: 20px; /* InputBox와의 간격 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+  }
+`;
+
+//입력하는 box
+export const InputBox = styled.input`
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #d58c56; /* 입력란 밑줄 */
+  font-size: 16px;
+  padding: 5px;
+  margin-left: 8px;
+  text-align: center;
+  outline: none;
+  color: #a8683b; /* 입력 텍스트 색상 */
+  background: none;
+
+  &::placeholder {
+    color: #d58c56;
+    opacity: 0.7; /* 플레이스홀더 색상 */
   }
 `;

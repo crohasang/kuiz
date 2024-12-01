@@ -7,7 +7,7 @@ import {
   Title,
   Button,
   ExplanationContainer,
-} from './quizscreen1_styles';
+} from './quizscreen_styles';
 import { Container } from '../../components/common/container/Container';
 import { useState, useEffect } from 'react';
 
