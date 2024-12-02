@@ -1,13 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import { Container } from "../components/common/container/Container"
 import { css } from '@emotion/react';
-import { Col } from "../components/common/flex/Flex";
+import { Col, Row } from "../components/common/flex/Flex";
 import { TopBackground, BottomBackground } from "../components/userPage/Background";
 import ProfileEllipse from "../components/homePage/ellipse/ProfileEllipse";
+import NoteButton from "../components/userPage/NoteButton";
+import { useNavigate } from "react-router-dom";
 
 const UserPage = () => {
   let nickname = "디자인마스터";
   let score = 600;
+  const navigate = useNavigate();
 
   return (
     <Container>
@@ -18,17 +21,24 @@ const UserPage = () => {
         alignItems="center"
       >
         <TopBackground>
-          <div css={css`
-            position: absolute;
-            top: 18px;
-            right: 16px;
-            color: var(--brown0, #9C5D23);
-            font-family: Pretendard;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;`}>로그아웃
-          </div>
+          <button 
+            onClick={() => navigate('/')}
+            css={css`
+              position: absolute;
+              top: 18px;
+              right: 16px;
+              color: var(--brown0, #9C5D23);
+              font-family: Pretendard;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              background: none;
+              border: none;
+              cursor: pointer;
+              padding: 0;
+            `}>로그아웃
+          </button>
           <div css={css`
             position: absolute;
             top: 50%;
@@ -78,6 +88,20 @@ const UserPage = () => {
         alignItems="center"
       >
       <BottomBackground>
+        <div css={css`
+          margin-top: 32px;
+          padding: 0 35px 0 35px;
+        `}>
+          <NoteButton
+            title="나의 오답노트"
+            to="/"
+            css={css`margin-bottom: 35px;`}
+          />
+          <NoteButton
+            title="나만의 개념노트"
+            to="/"
+          />
+        </div>
       </BottomBackground> 
       </Col>
     </Container>
