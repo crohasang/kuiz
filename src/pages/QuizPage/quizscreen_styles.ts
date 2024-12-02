@@ -27,7 +27,26 @@ const scaleDownAndShiftRight = keyframes`
     transform: translateX(0) scale(1);
   }
   to {
-    transform: translateX(10%) translateY(-25%) scale(0.8); /* 약간 왼쪽으로 이동하며 축소 */
+    transform: translateX(10%) translateY(-25%) scale(0.8); /* 약간 오른쪽으로 이동하며 축소 */
+  }
+`;
+
+// scaleAndShiftLeft, scaleDownAndShiftLeft는 오른쪽 그림이 정답일 때 사용할 2가지 keyframes 세트 (왼쪽으로 살짝 이동하며 확대)
+const scaleAndShiftLeft = keyframes`
+  from {
+    transform: translateX(0) scale(1);
+  }
+  to {
+    transform: translateX(-10%) translateY(-25%) scale(1.2); /* 약간 왼쪽으로 이동하며 확대 */
+  }
+`;
+
+const scaleDownAndShiftLeft = keyframes`
+  from {
+    transform: translateX(0) scale(1);
+  }
+  to {
+    transform: translateX(-10%) translateY(-25%) scale(0.8); /* 약간 왼쪽으로 이동하며 축소 */
   }
 `;
 
@@ -103,6 +122,7 @@ export const Button = styled.button`
   color: #ba6c25;
   background: #ffffff;
   border-radius: 12px; /* 부드러운 모서리 */
+  text-align: 'center', // 텍스트 정렬
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
@@ -110,13 +130,23 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
 
-  &.correct {
+  &.left-correct {
     animation: ${scaleAndShiftRight} 0.5s forwards;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
   }
 
-  &.incorrect {
+  &.right-incorrect {
     animation: ${scaleDownAndShiftRight} 0.5s forwards;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+  }
+
+  &.left-incorrect {
+    animation: ${scaleDownAndShiftLeft} 0.5s forwards;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+  }
+
+  &.right-correct {
+    animation: ${scaleAndShiftLeft} 0.5s forwards;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
   }
 
@@ -128,6 +158,7 @@ export const Button = styled.button`
   img {
     width: 100%;
     height: auto;
+    object-fit: contain;
   }
 
   @media (min-width: 1200px) {
