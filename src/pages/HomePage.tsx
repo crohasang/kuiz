@@ -6,6 +6,7 @@ import Line from '../assets/line.svg?react';
 import RankingCard from '../components/homePage/rankingCard/RankingCard';
 import { Container } from '../components/common/container/Container';
 import { Col, Row } from '../components/common/flex/Flex';
+import RankingRow from '../components/homePage/rankingRow/RankingRow';
 
 const HomePage = () => {
   return (
@@ -80,18 +81,44 @@ const HomePage = () => {
             <Line />
           </div>
           <Row justifyContent="center" padding={'62px 0 32px'} gap={8}>
-            <RankingCard rank={1} title="과탑은 나의것" score={70} />
+            <RankingCard rank={2} title="UI는심플하게" score={80} />
             <RankingCard
               css={css`
                 margin-top: -30px;
               `}
               rank={1}
               title="과탑은 나의것"
-              score={70}
+              score={90}
             />
-            <RankingCard rank={1} title="과탑은 나의것" score={70} />
+            <RankingCard rank={3} title="공부공부" score={70} />
           </Row>
+          <div
+            css={css`
+              margin-top: 22px;
+              display: flex;
+              justify-content: center;
+            `}
+          >
+            <Line />
+          </div>
+          <Col
+            css={css`
+              margin-top: 10px;
+              width: 100%;
+              gap: 10px;
+            `}
+            alignItems="center"
+          >
+            <RankingRow rank={4} nickname="사용자아이디" score={60} />
+            <RankingRow rank={5} nickname="사용자아이디" score={60} />
+            <RankingRow rank={6} nickname="사용자아이디" score={60} />
+            <RankingRow rank={7} nickname="사용자아이디" score={60} />
+            <RankingRow rank={8} nickname="사용자아이디" score={60} />
+            <RankingRow rank={9} nickname="사용자아이디" score={60} />
+            <RankingRow rank={10} nickname="사용자아이디" score={60} />
+          </Col>
         </RoundedBackground>
+        
       </Col>
     </Container>
   );
