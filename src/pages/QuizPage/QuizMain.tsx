@@ -2,7 +2,7 @@ import { TopBackground, BottomBackground, Title, Button, FloatingButton } from '
 import { Container } from '../../components/common/container/Container';
 import MenuBookIcon from '../../assets/menu_book.svg';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import QuizScreen1 from './QuizScreen1';
+import QuizManager from './QuizManager';
 
 //Quiz 메인 페이지
 function QuizMainContent() {
@@ -37,12 +37,13 @@ function QuizMainContent() {
 
 // QuizMain 관련한 컴포넌트 (하위 퀴즈 화면들을 Route로 우선 연결해 놓았습니다)
 function QuizMain() {
+
   return (
     <Routes>
-      <Route path="/" element={<QuizMainContent />} />
-      <Route path="/screen1" element={<QuizScreen1 />} />
-      <Route path="/screen2" element={<QuizScreen1 />} />
-      <Route path="/screen3" element={<QuizScreen1 />} />
+      <Route path="/" element={<QuizMainContent/>} />
+      <Route path="/screen1" element={<QuizManager/>} />
+      <Route path="/screen2" element={<QuizManager/>} />
+      <Route path="/screen3" element={<QuizManager/>} />
     </Routes>
   );
 }

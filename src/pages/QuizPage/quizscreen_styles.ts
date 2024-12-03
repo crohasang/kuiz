@@ -27,7 +27,26 @@ const scaleDownAndShiftRight = keyframes`
     transform: translateX(0) scale(1);
   }
   to {
-    transform: translateX(10%) translateY(-25%) scale(0.8); /* 약간 왼쪽으로 이동하며 축소 */
+    transform: translateX(10%) translateY(-25%) scale(0.8); /* 약간 오른쪽으로 이동하며 축소 */
+  }
+`;
+
+// scaleAndShiftLeft, scaleDownAndShiftLeft는 오른쪽 그림이 정답일 때 사용할 2가지 keyframes 세트 (왼쪽으로 살짝 이동하며 확대)
+const scaleAndShiftLeft = keyframes`
+  from {
+    transform: translateX(0) scale(1);
+  }
+  to {
+    transform: translateX(-10%) translateY(-25%) scale(1.2); /* 약간 왼쪽으로 이동하며 확대 */
+  }
+`;
+
+const scaleDownAndShiftLeft = keyframes`
+  from {
+    transform: translateX(0) scale(1);
+  }
+  to {
+    transform: translateX(-10%) translateY(-25%) scale(0.8); /* 약간 왼쪽으로 이동하며 축소 */
   }
 `;
 
@@ -103,6 +122,7 @@ export const Button = styled.button`
   color: #ba6c25;
   background: #ffffff;
   border-radius: 12px; /* 부드러운 모서리 */
+  text-align: 'center', // 텍스트 정렬
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
@@ -110,13 +130,23 @@ export const Button = styled.button`
   justify-content: center;
   align-items: center;
 
-  &.correct {
+  &.left-correct {
     animation: ${scaleAndShiftRight} 0.5s forwards;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
   }
 
-  &.incorrect {
+  &.right-incorrect {
     animation: ${scaleDownAndShiftRight} 0.5s forwards;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+  }
+
+  &.left-incorrect {
+    animation: ${scaleDownAndShiftLeft} 0.5s forwards;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+  }
+
+  &.right-correct {
+    animation: ${scaleAndShiftLeft} 0.5s forwards;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
   }
 
@@ -128,6 +158,7 @@ export const Button = styled.button`
   img {
     width: 100%;
     height: auto;
+    object-fit: contain;
   }
 
   @media (min-width: 1200px) {
@@ -151,7 +182,7 @@ export const ButtonContainer = styled.div`
   justify-content: space-around; /* 버튼 사이 간격 균등 배분 */
   align-items: center;
   width: 100%;
-  margin-top: 20px;
+  margin-top: -20px;
   @media (max-height: 840px) {
     margin-top: -45px;
   }
@@ -211,26 +242,65 @@ export const ExplanationContainer = styled.div`
   }
 `;
 
-// 다음 버튼 스타일
-export const NextButton = styled.button`
-  margin-top: 16px; /* 위의 여유 공간 */
-  margin-bottom: 16px; /* 하단 간격 */
-  padding: 12px 24px;
-  background-color: #e39e5f;
-  color: #ffffff;
-  font-size: 1.6rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+// 문제 컨테이너 (세로 정렬)
+export const QuestionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   width: 100%;
-  box-sizing: border-box; /* 패딩 포함하여 크기 계산 */
+  padding: 20px;
+  margin-top: -52px; /* 약간 컨테이너를 중앙에서 위쪽으로 올리기 */
+  max-width: 340px;
+  word-wrap: break-word; /* 텍스트가 너무 길면 자동으로 줄바꿈 */
+  overflow-wrap: break-word; /* 최신 브라우저 호환성 */
+  white-space: normal; /* 기본 줄바꿈 동작 */
 
-  &:hover {
-    background-color: #d2884f;
+  .question {
+    font-family: 'Pretendard';
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #9C5D23;
+    margin: 0 0;
+    margin-bottom: 20px;
   }
+`;
 
-  &:active {
-    background-color: #c27845;
+//Input(입력란) 관련한 컴포넌트
+export const InputContainer = styled.div`
+  display: flex;
+  align-items: center; /* 세로 정렬 */
+  justify-content: center;
+  width: 100%; /* 부모 컨테이너의 전체 너비 */
+  padding: 20px; 
+  margin-top: 28px;
+  max-width: 340px; /* 고정된 최대 너비 */
+
+  .inputLabel {
+    font-family: 'Pretendard';
+    font-size: 16px;
+    font-weight: 600;
+    color: #9C5D23; /* 텍스트 색상 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+  }
+`;
+
+//입력하는 box
+export const InputBox = styled.input`
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #9C5D23; /* 입력란 밑줄 */
+  font-size: 16px;
+  padding: 5px;
+  margin-left: 8px;
+  text-align: center;
+  outline: none;
+  font-weight: 600;
+  color: #9C5D23; /* 입력 텍스트 색상 */
+  background: none;
+
+  &::placeholder {
+    color: #9C5D23;
+    opacity: 0.7; /* 플레이스홀더 색상 */
   }
 `;
