@@ -28,7 +28,7 @@ function QuizScreen2({
   question: string;
   answer: string;
   explanation: string;
-  onNext: ()=>void;
+  onNext: (isCorrect: boolean) => void;
 }) {
     const [inputAnswer, setInputAnswer] = useState<string | null>(null); //사용자가 입력한 답에 관한 값을 가지고 있는 selectedAnswer
     const [isSubmit, setIsSubmit] = useState<boolean | null>(null); //답 제출 여부에 관한 state
@@ -72,6 +72,11 @@ function QuizScreen2({
         }
     }
 
+    //다음 문제로 넘어가는 클릭 이벤트 처리하는 메소드 handleNextClick
+    const handleNextClick = (isCorrect: boolean | null) => {
+        onNext(isCorrect as boolean);
+    }
+
     return (
         <Container isBottomNavigation={false}>
             {/* 상단 곡선 배경 */}
@@ -110,7 +115,7 @@ function QuizScreen2({
                     <span className="explanation">{explanation}</span>
                         <PrimaryButton
                             title="다음"
-                            onClick={onNext}
+                            onClick={()=>handleNextClick(isCorrect)}
                             css={css`
                                 margin: 15px 0 16px;
                             `}

@@ -29,25 +29,25 @@ function QuizManager() {
         setShuffledQuizzes(selectedQuizzes); // 상태에 저장
     }, []);
 
-    // //정답 처리 함수
-    // const handleNext = (isCorrect: boolean) => {
+    //정답 처리 함수
+    const handleNext = (isCorrect: boolean) => {
+        console.log("handleNext 수행, currentQuizIndex: ", currentQuizIndex);
 
-    //     console.log("handleNext 수행");
+        //정답이면 점수 증가
+        if(isCorrect) {
+            console.log("정답이에요")
+            setScore((prevScore: number) => prevScore + 10);
+        }
 
-    //     //정답이면 점수 증가
-    //     if(isCorrect) {
-    //         setScore((prevScore: number) => prevScore + 10);
-    //     }
-
-    //     //다음 문제로 이동
-    //     if(currentQuizIndex < shuffledQuizzes.length) {
-    //         setCurrentQuizIndex((prevIndex: number) => prevIndex + 1);
-    //     } else {
-    //         //마지막 문제를 푼 경우 결과 표시
-    //         alert(`총 ${score + (isCorrect ? 10 : 0)}점을 획득했습니다!`); //마지막 정답 반영
-    //         handleReset(); //초기화 및 메인 화면으로 이동
-    //     }
-    // }
+        //다음 문제로 이동
+        if(currentQuizIndex + 1 < shuffledQuizzes.length) {
+            setCurrentQuizIndex((prevIndex: number) => prevIndex + 1);
+        } else {
+            //마지막 문제를 푼 경우 결과 표시
+            alert(`총 ${score + (isCorrect ? 10 : 0)}점을 획득했습니다!`); //마지막 정답 반영
+            // handleReset(); //초기화 및 메인 화면으로 이동
+        }
+    }
 
     //초기화 함수
     // const handleReset = () => {
@@ -82,7 +82,7 @@ function QuizManager() {
                         options={currentQuiz.options || []}
                         answer={currentQuiz.answer}
                         explanation={currentQuiz.explanation}
-                        onNext={()=>{setCurrentQuizIndex((prev) => prev+1)}}
+                        onNext={handleNext}
                     />
                 );
             case 'fill_blank': //빈칸 채우기 유형의 경우
@@ -93,7 +93,7 @@ function QuizManager() {
                         question={currentQuiz.question}
                         answer={currentQuiz.answer}
                         explanation={currentQuiz.explanation}
-                        onNext={()=>{setCurrentQuizIndex((prev) => prev+1)}}
+                        onNext={handleNext}
                     />
                 );
             default:
