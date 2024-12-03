@@ -28,7 +28,7 @@ function QuizScreen2({
   question: string;
   answer: string;
   explanation: string;
-  onNext: () => void;
+  onNext: ()=>void;
 }) {
     const [inputAnswer, setInputAnswer] = useState<string | null>(null); //사용자가 입력한 답에 관한 값을 가지고 있는 selectedAnswer
     const [isSubmit, setIsSubmit] = useState<boolean | null>(null); //답 제출 여부에 관한 state
@@ -76,7 +76,7 @@ function QuizScreen2({
         <Container isBottomNavigation={false}>
             {/* 상단 곡선 배경 */}
             <TopBackground className={isCorrect !== null ? 'top-background-animate' : ''}>
-                <Title font="Pretendard">{currentQuizIndex}/5</Title>
+                <Title font="Pretendard">{currentQuizIndex+1}/5</Title>
                 <Title color={getTitleTextColor()}>{getTitleText()}</Title>
             </TopBackground>
             {/* 하단 배경 및 문제 컨텐츠 */}

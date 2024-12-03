@@ -25,10 +25,10 @@ function QuizScreen1({
 }: {
   currentQuizIndex: number;
   question: string;
-  options: {id: string, type: 'image' | 'text', content: string}[]; //옵션
+  options: {id: string, type: string, content: string}[]; //옵션
   answer: string;
   explanation: string;
-  onNext: () => void;
+  onNext: ()=>void;
 }) {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null); //사용자가 고른 답에 관한 값을 가지고 있는 selectedAnswer
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null); //정/오답 여부에 대한 값을 가지고 있는 isCorrect
@@ -71,7 +71,7 @@ function QuizScreen1({
     <Container isBottomNavigation={false}>
       {/* 상단 곡선 배경 */}
       <TopBackground className={selectedAnswer !== null ? 'top-background-animate' : ''}>
-        <Title font="Pretendard">{currentQuizIndex}/5</Title>
+        <Title font="Pretendard">{currentQuizIndex+1}/5</Title>
         <Title color={getTitleTextColor()}>{getTitleText()}</Title>
       </TopBackground>
       {/* 하단 배경 및 콘텐츠 */}

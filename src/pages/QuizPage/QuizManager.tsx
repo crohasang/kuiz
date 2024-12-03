@@ -9,25 +9,52 @@ import {Quiz} from './types';
 //퀴즈 데이터를 랜덤화 하여 하위 컴포넌트를 내뱉도록 구현된 QuizManager
 function QuizManager() {
     const [shuffledQuizzes, setShuffledQuizzes] = useState<Quiz[]>([]); //랜덤 문제 목록
-    const [currentQuizIndex, setCurrentQuizIndex] = useState<number>(1); //현재 퀴즈 인덱스
+    const [currentQuizIndex, setCurrentQuizIndex] = useState<number>(0); //현재 퀴즈 인덱스
+    const [score, setScore] = useState<number>(0); //점수 저장 (추후에 전역 state로 사용해야 할 것 같음)
 
-    // 문제 섞는 함수 (Fisher-Yates Shuffle 알고리즘)
-    const shuffleArray = (array: any[]) => {
-        const shuffled = [...array];
-        for (let i = shuffled.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    //랜덤하게 인덱스를 선택하는 함수
+    const getRandomIndexes = (length: number, count: number) => {
+        const indexes = new Set<number>(); //중복 제거를 위해 Set 사용
+        while(indexes.size < count) {
+            const randomIndex = Math.floor(Math.random() * length);
+            indexes.add(randomIndex);
         }
-        return shuffled;
-    };
+        return Array.from(indexes); //Set을 배열로 변환
+    }
 
-    // 랜덤 문제를 5개 선택
+    //랜덤 문제 생성
     useEffect(() => {
-        //const quizzesWithImages = loadQuizWithImages(quizData); // 이미지 경로 로드
-        const shuffled = shuffleArray(quizData); // 문제 섞기
-        const selectedQuizzes = shuffled.slice(0, 5); // 상위 5개 선택
+        const randomIndexes = getRandomIndexes(quizData.length, 5); // 5개의 랜덤 인덱스 생성
+        const selectedQuizzes = randomIndexes.map((index) => quizData[index]); // 인덱스를 기반으로 문제 선택
         setShuffledQuizzes(selectedQuizzes); // 상태에 저장
     }, []);
+
+    // //정답 처리 함수
+    // const handleNext = (isCorrect: boolean) => {
+
+    //     console.log("handleNext 수행");
+
+    //     //정답이면 점수 증가
+    //     if(isCorrect) {
+    //         setScore((prevScore: number) => prevScore + 10);
+    //     }
+
+    //     //다음 문제로 이동
+    //     if(currentQuizIndex < shuffledQuizzes.length) {
+    //         setCurrentQuizIndex((prevIndex: number) => prevIndex + 1);
+    //     } else {
+    //         //마지막 문제를 푼 경우 결과 표시
+    //         alert(`총 ${score + (isCorrect ? 10 : 0)}점을 획득했습니다!`); //마지막 정답 반영
+    //         handleReset(); //초기화 및 메인 화면으로 이동
+    //     }
+    // }
+
+    //초기화 함수
+    // const handleReset = () => {
+    //     setShuffledQuizzes([]);
+    //     setCurrentQuizIndex(0);
+    //     setScore(0);
+    // }
 
     //퀴즈를 rendering하는 메소드 renderQuiz
     const renderQuiz = () => {
@@ -49,22 +76,24 @@ function QuizManager() {
             case 'choice': //양자택일 유형의 경우
                 return (
                     <QuizScreen1
+                        key={currentQuizIndex} // key 추가
                         currentQuizIndex={currentQuizIndex}
                         question={currentQuiz.question}
                         options={currentQuiz.options || []}
                         answer={currentQuiz.answer}
                         explanation={currentQuiz.explanation}
-                        onNext={() => setCurrentQuizIndex((prev) => prev + 1)}
+                        onNext={()=>{setCurrentQuizIndex((prev) => prev+1)}}
                     />
                 );
             case 'fill_blank': //빈칸 채우기 유형의 경우
                 return (
                     <QuizScreen2
+                        key={currentQuizIndex} // key 추가
                         currentQuizIndex={currentQuizIndex}
                         question={currentQuiz.question}
                         answer={currentQuiz.answer}
                         explanation={currentQuiz.explanation}
-                        onNext={() => setCurrentQuizIndex((prev) => prev + 1)}
+                        onNext={()=>{setCurrentQuizIndex((prev) => prev+1)}}
                     />
                 );
             default:
@@ -72,14 +101,9 @@ function QuizManager() {
         }
     }
 
-    // 결과 화면 처리
-    const renderResult = () => <div>퀴즈가 끝났습니다!</div>;
-
-    //최종적으로 Quiz 화면 출력 (5개 다 풀면, 결과화면(renderResult) 출력)
+    //최종적으로 Quiz 화면 출력(renderQuiz() 메소드 활용)
     return (
-        <div>
-            {currentQuizIndex <= shuffledQuizzes.length ? renderQuiz() : renderResult()}
-        </div>
+        <div>{renderQuiz()}</div>
     );
 }
 
