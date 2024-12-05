@@ -99,7 +99,7 @@ const UserPage = () => {
           />
           <NoteButton
             title="나만의 개념노트"
-            to="/"
+            to="/concept_note"
           />
         </div>
       </BottomBackground> 

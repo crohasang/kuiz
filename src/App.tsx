@@ -5,6 +5,7 @@ import UserPage from './pages/UserPage';
 import NotFoundPage from './pages/NotFoundPage';
 import BottomNavigation from './components/bottomNavigation';
 import LoginPage from './pages/LoginPage';
+import ConceptNote from './pages/ConceptNote';
 
 //본래의 App Component
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/quiz/*" element={<QuizMain />} />
         <Route path="/user" element={<UserPage />} />
+        <Route path ="/concept_note" element={<ConceptNote />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       {!shouldHideBottomNav && <BottomNavigation />}
