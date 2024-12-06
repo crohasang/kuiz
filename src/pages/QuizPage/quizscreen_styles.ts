@@ -115,7 +115,7 @@ export const Title = styled.h1<{ color?: string; font?: string }>`
 export const Button = styled.button`
   width: 45%; /* 버튼 너비를 45%로 설정해 두 개의 버튼이 가로로 배치되도록 */
   max-width: 200px;
-  height: 300px; /* 고정된 버튼 높이 */
+  height: 270px; /* 고정된 버튼 높이 */
   margin: 8px; /* 간격 조정 */
   font-size: 2rem;
   font-weight: bold;
@@ -129,6 +129,8 @@ export const Button = styled.button`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
 
   &.left-correct {
     animation: ${scaleAndShiftRight} 0.5s forwards;
@@ -156,8 +158,8 @@ export const Button = styled.button`
   }
 
   img {
-    width: 100%;
-    height: auto;
+    height: 100%;
+    max-width: 120%;
     object-fit: contain;
   }
 
@@ -165,9 +167,17 @@ export const Button = styled.button`
     font-size: 2rem;
   }
 
+  span {
+    font-size: 1.8rem;
+    font-weight: bold; // 텍스트 굵기
+    color: #5a3220; // 텍스트 색상
+  }
+
   .overlay-text {
-    position: relative;
-    top: -180px;
+    position: absolute; /* Button을 기준으로 고정 */
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%); /* 가로 중앙 정렬 */
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 2rem;
