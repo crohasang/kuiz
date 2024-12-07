@@ -9,11 +9,11 @@ import { useNavigate } from 'react-router-dom';
 
 
 //퀴즈 데이터를 랜덤화 하여 하위 컴포넌트를 내뱉도록 구현된 QuizManager
-function QuizManager(props: { score: number; setScore: (score: number) => void }) {
+function QuizManager(props: { score: number; setScore: (score: number) => void; addInCorrectQuestionID: (id:number) => void; }) {
     const [shuffledQuizzes, setShuffledQuizzes] = useState<Quiz[]>([]); //랜덤 문제 목록
     const [currentQuizIndex, setCurrentQuizIndex] = useState<number>(0); //현재 퀴즈 인덱스
     const [localScore, setLocalScore] = useState<number>(0); //점수 저장 (추후에 전역 state로 사용해야 할 것 같음)
-    const {score, setScore} = props; //props 객체에서 구조 분해 할당
+    const {score, setScore, addInCorrectQuestionID} = props; //props 객체에서 구조 분해 할당
 
     const navigate = useNavigate(); //버튼 클릭 시 라우팅을 위해 사용
 
@@ -36,11 +36,14 @@ function QuizManager(props: { score: number; setScore: (score: number) => void }
 
     //정답 처리 함수
     const handleNext = (isCorrect: boolean) => {
-        console.log("handleNext 수행, currentQuizIndex: ", currentQuizIndex);
-
         //정답이면 점수 증가
         if(isCorrect) {
             setLocalScore((prevScore: number) => prevScore + 10);
+        }
+
+        //오답이면 해당 문제의 id 추가
+        if(!isCorrect) {
+            addInCorrectQuestionID(shuffledQuizzes[currentQuizIndex].id); 
         }
 
         //다음 문제로 이동

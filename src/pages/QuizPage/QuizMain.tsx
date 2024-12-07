@@ -38,9 +38,9 @@ function QuizMainContent() {
 }
 
 // QuizMain 관련한 컴포넌트 (하위 퀴즈 화면들을 Route로 우선 연결해 놓았습니다)
-function QuizMain(props: { score: number; setScore: (score: number) => void }) {
+function QuizMain(props: { score: number; setScore: (score: number) => void; addInCorrectQuestionID: (id:number) => void; }) {
 
-  const {score, setScore} = props; //props 객체에서 구조 분해 할당
+  const {score, setScore, addInCorrectQuestionID} = props; //props 객체에서 구조 분해 할당
   
   //테스트용 코드
   useEffect(()=> {
@@ -50,9 +50,9 @@ function QuizMain(props: { score: number; setScore: (score: number) => void }) {
   return (
     <Routes>
       <Route path="/" element={<QuizMainContent/>} />
-      <Route path="/screen1" element={<QuizManager score={score} setScore={setScore}/>} />
-      <Route path="/screen2" element={<QuizManager score={score} setScore={setScore}/>} />
-      <Route path="/screen3" element={<QuizManager score={score} setScore={setScore}/>} />
+      <Route path="/screen1" element={<QuizManager score={score} setScore={setScore} addInCorrectQuestionID={addInCorrectQuestionID}/>} />
+      <Route path="/screen2" element={<QuizManager score={score} setScore={setScore} addInCorrectQuestionID={addInCorrectQuestionID}/>} />
+      <Route path="/screen3" element={<QuizManager score={score} setScore={setScore} addInCorrectQuestionID={addInCorrectQuestionID}/>} />
     </Routes>
   );
 }

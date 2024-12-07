@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import HomePage from './pages/HomePage';
 import QuizMain from './pages/QuizPage/QuizMain';
 import UserPage from './pages/UserPage';
@@ -14,14 +14,38 @@ const App = () => {
   const shouldHideBottomNav = hideBottomNavPaths.includes(location.pathname);
 
   //점수 관리
-  const [score, setScore] = useState<number>(0);
+  const [score, setScore] = useState<number>(()=>{
+    const savedScore = localStorage.getItem('score');
+    return savedScore ? JSON.parse(savedScore) : 0; // localStorage에 저장된 값이 없으면 0으로 초기화
+  }); 
+
+  //오답 문제의 ID를 저장
+  const [incorrectQuestionIDs, setIncorrectQuestionIDs] = useState<number[]>(()=>{
+    // 초기값으로 localStorage에서 데이터를 로드
+    const savedIncorrectIDs = localStorage.getItem('incorrectQuestionIDs');
+    return savedIncorrectIDs ? JSON.parse(savedIncorrectIDs) : [];
+  }); 
+  
+  // 점수가 업데이트될 때 localStorage에 저장
+  useEffect(() => {
+    localStorage.setItem('score', JSON.stringify(score));
+  }, [score]);
+
+  // 오답 ID 추가 메소드인 addIncorrectQuestionID
+  const addIncorrectQuestionID = (id: number) => {
+    if (!incorrectQuestionIDs.includes(id)) {
+      const updatedIDs = [...incorrectQuestionIDs, id];
+      setIncorrectQuestionIDs(updatedIDs);
+      localStorage.setItem('incorrectQuestionIDs', JSON.stringify(updatedIDs)); // 업데이트된 데이터를 localStorage에 저장
+    }
+  };
 
   return (
     <>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<HomePage/>} />
-        <Route path="/quiz/*" element={<QuizMain score={score} setScore={setScore} />} />
+        <Route path="/quiz/*" element={<QuizMain score={score} setScore={setScore} addInCorrectQuestionID={addIncorrectQuestionID} />} />
         <Route path="/user" element={<UserPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
