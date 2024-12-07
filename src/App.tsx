@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { useState } from 'react';
 import HomePage from './pages/HomePage';
 import QuizMain from './pages/QuizPage/QuizMain';
 import UserPage from './pages/UserPage';
@@ -12,12 +13,15 @@ const App = () => {
   const hideBottomNavPaths = ['/login', '/quiz/screen1', '/quiz/screen2', '/quiz/screen3'];
   const shouldHideBottomNav = hideBottomNavPaths.includes(location.pathname);
 
+  //점수 관리
+  const [score, setScore] = useState<number>(0);
+
   return (
     <>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/" element={<HomePage />} />
-        <Route path="/quiz/*" element={<QuizMain />} />
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/quiz/*" element={<QuizMain score={score} setScore={setScore} />} />
         <Route path="/user" element={<UserPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

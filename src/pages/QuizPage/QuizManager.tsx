@@ -9,10 +9,11 @@ import { useNavigate } from 'react-router-dom';
 
 
 //퀴즈 데이터를 랜덤화 하여 하위 컴포넌트를 내뱉도록 구현된 QuizManager
-function QuizManager() {
+function QuizManager(props: { score: number; setScore: (score: number) => void }) {
     const [shuffledQuizzes, setShuffledQuizzes] = useState<Quiz[]>([]); //랜덤 문제 목록
     const [currentQuizIndex, setCurrentQuizIndex] = useState<number>(0); //현재 퀴즈 인덱스
-    const [score, setScore] = useState<number>(0); //점수 저장 (추후에 전역 state로 사용해야 할 것 같음)
+    const [localScore, setLocalScore] = useState<number>(0); //점수 저장 (추후에 전역 state로 사용해야 할 것 같음)
+    const {score, setScore} = props; //props 객체에서 구조 분해 할당
 
     const navigate = useNavigate(); //버튼 클릭 시 라우팅을 위해 사용
 
@@ -39,7 +40,7 @@ function QuizManager() {
 
         //정답이면 점수 증가
         if(isCorrect) {
-            setScore((prevScore: number) => prevScore + 10);
+            setLocalScore((prevScore: number) => prevScore + 10);
         }
 
         //다음 문제로 이동
@@ -47,7 +48,8 @@ function QuizManager() {
             setCurrentQuizIndex((prevIndex: number) => prevIndex + 1);
         } else {
             //마지막 문제를 푼 경우 결과 표시
-            alert(`총 ${score + (isCorrect ? 10 : 0)}점을 획득했습니다!`); //마지막 정답 반영
+            alert(`총 ${localScore + (isCorrect ? 10 : 0)}점을 획득했습니다!`); //마지막 정답 반영
+            setScore(score+localScore + (isCorrect ? 10 : 0)); //점수 set
             handleReset(); //초기화 및 메인 화면으로 이동
         }
     }
@@ -56,7 +58,7 @@ function QuizManager() {
     const handleReset = () => {
         setShuffledQuizzes([]);
         setCurrentQuizIndex(0);
-        setScore(0);
+        setLocalScore(0);
         navigate('/quiz'); //퀴즈 메인으로 이동
     }
 
