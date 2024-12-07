@@ -39,6 +39,9 @@ export const Title = styled.span`
   font-size: 1.8rem;
   text-align: center;
   font-family: 'LeeSeoyun';
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal; /* 줄바꿈 허용 */
 
   @media screen and (min-width: 1200px) {
     font-size: 2rem;

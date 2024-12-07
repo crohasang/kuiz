@@ -77,7 +77,9 @@ function QuizScreen1({
       {/* 상단 곡선 배경 */}
       <TopBackground className={selectedAnswer !== null ? 'top-background-animate' : ''}>
         <Title font="Pretendard">{currentQuizIndex+1}/5</Title>
-        <Title color={getTitleTextColor()}>{getTitleText()}</Title>
+        <div style={{maxWidth: '350px'}}>
+          <Title color={getTitleTextColor()}>{getTitleText()}</Title>
+        </div>
       </TopBackground>
       {/* 하단 배경 및 콘텐츠 */}
       <BottomBackground>
@@ -103,15 +105,9 @@ function QuizScreen1({
                   alt={`Option ${option.id}`}
                 />
               ) : (
-                <div
-                  style={{
-                    fontSize: '1.2rem', // 텍스트 크기
-                    fontWeight: 'bold', // 텍스트 굵기
-                    color: '#5a3220', // 텍스트 색상
-                  }}
-                >
+                <span>
                   {option.content}
-                </div>
+                </span>
               )}
               <span className="overlay-text">{option.id}</span> {/* 버튼 상단 ID 표시 */}
             </Button>
