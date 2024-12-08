@@ -94,7 +94,7 @@ const UserPage = () => {
         `}>
           <NoteButton
             title="나의 오답노트"
-            to="/"
+            to="/correction_note"
             css={css`margin-bottom: 35px;`}
           />
           <NoteButton

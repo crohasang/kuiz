@@ -7,6 +7,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import BottomNavigation from './components/bottomNavigation';
 import LoginPage from './pages/LoginPage';
 import ConceptNote from './pages/ConceptNote';
+import CorrectionNote from './pages/CorrectionNote';
 
 //본래의 App Component
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
         <Route path="/" element={<HomePage/>} />
         <Route path="/quiz/*" element={<QuizMain score={score} setScore={setScore} addInCorrectQuestionID={addIncorrectQuestionID} />} />
         <Route path="/user" element={<UserPage />} />
+        <Route path="/correction_note" element={<CorrectionNote />} />
         <Route path ="/concept_note" element={<ConceptNote />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
