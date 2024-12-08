@@ -10,6 +10,12 @@ function QuizMainContent() {
 
   const navigate = useNavigate(); //버튼 클릭 시 라우팅을 위해 사용
 
+  //플로팅 버튼을 눌렀을 때의 event 처리
+  function handleFloatingButtonClick()
+  {
+    navigate('/concept_note');
+  }
+
   return (
     <Container>
       <TopBackground>
@@ -31,7 +37,7 @@ function QuizMainContent() {
       </BottomBackground>
       {/* 플로팅 버튼 */}
       <FloatingButton>
-        <img src={MenuBookIcon} alt="Menu Book Icon" />
+        <img src={MenuBookIcon} alt="Menu Book Icon" onClick={handleFloatingButtonClick}/>
       </FloatingButton>
     </Container>
   );

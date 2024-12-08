@@ -1,15 +1,18 @@
 /** @jsxImportSource @emotion/react */
 import { Container } from "../components/common/container/Container"
 import { css } from '@emotion/react';
-import { Col, Row } from "../components/common/flex/Flex";
+import { Col } from "../components/common/flex/Flex";
 import { TopBackground, BottomBackground } from "../components/userPage/Background";
 import ProfileEllipse from "../components/homePage/ellipse/ProfileEllipse";
 import NoteButton from "../components/userPage/NoteButton";
 import { useNavigate } from "react-router-dom";
 
-const UserPage = () => {
+type HomePageProps = {
+  score: number;
+};
+
+const UserPage: React.FC<HomePageProps> = ({score}) => {
   let nickname = "디자인마스터";
-  let score = 600;
   const navigate = useNavigate();
 
   return (

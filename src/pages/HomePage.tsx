@@ -8,7 +8,11 @@ import { Container } from '../components/common/container/Container';
 import { Col, Row } from '../components/common/flex/Flex';
 import RankingRow from '../components/homePage/rankingRow/RankingRow';
 
-const HomePage = () => {
+type HomePageProps = {
+  score: number;
+};
+
+const HomePage: React.FC<HomePageProps> = ({score}) => {
   return (
     <Container>
       <Col
@@ -90,7 +94,7 @@ const HomePage = () => {
               title="과탑은 나의것"
               score={90}
             />
-            <RankingCard rank={3} title="공부공부" score={70} />
+            <RankingCard rank={3} title="디자인마스터" score={score} />
           </Row>
           <div
             css={css`
@@ -109,13 +113,13 @@ const HomePage = () => {
             `}
             alignItems="center"
           >
-            <RankingRow rank={4} nickname="사용자아이디" score={60} />
-            <RankingRow rank={5} nickname="사용자아이디" score={60} />
-            <RankingRow rank={6} nickname="사용자아이디" score={60} />
-            <RankingRow rank={7} nickname="사용자아이디" score={60} />
-            <RankingRow rank={8} nickname="사용자아이디" score={60} />
-            <RankingRow rank={9} nickname="사용자아이디" score={60} />
-            <RankingRow rank={10} nickname="사용자아이디" score={60} />
+            <RankingRow rank={4} nickname="사용자아이디" score={30} />
+            <RankingRow rank={5} nickname="사용자아이디" score={20} />
+            <RankingRow rank={6} nickname="사용자아이디" score={10} />
+            <RankingRow rank={7} nickname="사용자아이디" score={0} />
+            <RankingRow rank={8} nickname="사용자아이디" score={0} />
+            <RankingRow rank={9} nickname="사용자아이디" score={0} />
+            <RankingRow rank={10} nickname="사용자아이디" score={0} />
           </Col>
         </RoundedBackground>
         
