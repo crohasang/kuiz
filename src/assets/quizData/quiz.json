@@ -8,7 +8,7 @@
             { "id": "B", "type": "image", "content": "/quiz_assets/1_B.png" }
         ],
         "answer": "B",
-        "chapter": "와이어프레임과 목업, 프로토타입",
+        "chapter": "프로토타입",
         "explanation": "코드 기반의 프로토타입은 지나치게 세부적으로 만들 위험이 높습니다. 타임라인 기반의 경우 세부적으로 만들 위험이 상대적으로 낮습니다."
     },
     {
@@ -70,5 +70,469 @@
         "answer": "A",
         "chapter": "모바일 디자인 패턴",
         "explanation": "비트맵 이미지는 확대하면 화질이 깨지고, 벡터 이미지는 확대해도 화질이 깨지지 않습니다. 모바일에서는 벡터 이미지를 사용하는 것을 권장하고 있습니다."
+    },
+    {
+        "id": 8,
+        "type": "fill_blank",
+        "question": "사용자 테스트에서 아이디어가 실제로 어떻게 작동하는지를 제대로 이해하기 위해서는 의견이 아니라 [ ]에 집중해야 한다",
+        "answer": "반응",
+        "chapter": "사용자 테스트",
+        "explanation": "사용자는 제품의 최종 심사위원이지만, 그들의 행동을 사전에 예측하기는 어렵습니다. 사용자가 무엇을 원하는지 물어보더라도 그들이 말하는 내용이 실제로 필요한 것인지 확신할 수 없기 때문에, 아이디어가 실제로 어떻게 작동하는지 이해하려면 사용자가 제품을 사용하는 모습을 관찰하는 것이 중요합니다. 이 과정에서 의견보다는 반응에 집중함으로써, 제품에 대한 진정한 사용성과 개선점을 발견할 수 있습니다."
+    },
+    {
+        "id": 9,
+        "type": "fill_blank",
+        "question": "사용자 테스트에서, 일반적인 원칙을 담은 사용성 가이드라인이 존재하지만, 제품을 [ ] 만드는 특정 컨텍스트에서의 모든 고려사항을 포함할 수 없다",
+        "answer": "독특하게",
+        "chapter": "사용자 테스트",
+        "explanation": "사용성 가이드라인은 일반적인 원칙을 제공하지만, 제품을 독특하게 만드는 특정 컨텍스트의 모든 고려사항을 포함할 수는 없습니다. 따라서 아이디어가 특정 컨텍스트에서 제대로 작동하는지 확인하려면 해당 환경에서 직접 테스트를 진행해야 합니다. 사용성 테스트는 이러한 과정에서 가장 의미 있는 이슈를 식별하고, 제품의 실제 사용성을 평가하는 데 중요한 역할을 합니다."
+    },
+    {
+        "id": 10,
+        "type": "fill_blank",
+        "question": "사용성 테스트에서 참가자가 ______ 하도록 격려하는 것이 좋다. 이는 무엇 때문에 이슈가 생겼는지를 정확히 이해하기 위해서 그들의 생각을 읽을 수 있는 최고의 방법이다.",
+        "answer": "소리 내 생각",
+        "chapter": "사용자 테스트",
+        "explanation": "테스트 중 참가자가 소리 내어 자신의 생각을 말하도록 유도하는 것은 이슈가 발생한 이유를 정확히 이해하는 데 매우 효과적입니다. 참가자가 프로토타입과 상호작용하며 무엇을 하고, 보고, 느끼는지를 말하도록 격려하면, 그들의 사고 과정을 읽을 수 있습니다. 만약 참가자가 중간에 멈춘다면, 부드럽게 그 순간의 생각을 설명해달라고 요청하여 추가적인 통찰을 얻을 수 있습니다."
+    },
+    {
+        "id": 11,
+        "type": "fill_blank",
+        "question": "테스트를 하다 보면 동일한 이슈가 반복되는 패턴을 확인하게 됩니다. 따라서 이슈의  _____에 대한 명확한 기준을 가져가는 것이 좋습니다.",
+        "answer": "우선 순위",
+        "chapter": "사용자 테스트",
+        "explanation": "우선순위를 정하는 것은 제한된 리소스를 효율적으로 활용하고 사용자 경험에 가장 큰 영향을 미치는 문제를 신속히 해결하기 위해 중요합니다. 모든 문제를 동등하게 다루려 하면 중요한 이슈가 묻히거나 해결이 지연될 수 있으며, 이는 제품의 성공에 직접적인 영향을 줄 수 있습니다. 주요 문제에 우선적으로 집중하면 사용자 만족도를 빠르게 개선할 수 있을 뿐 아니라, 리소스 낭비를 방지하고 개발 과정에서 더 큰 성과를 거둘 수 있습니다."
+    },
+    {
+        "id": 12,
+        "type": "fill_blank",
+        "question": "사용성 테스트에 있어서 최악의 설정 중 하나는 팀에서 이미 제품 방향을 정해놓고 이 결정을 ______ 위한 의도로 사용성 테스트를 하는 것이다.",
+        "answer": "확정",
+        "chapter": "사용자 테스트",
+        "explanation": "사용성 테스트에서 최악의 상황은 팀이 이미 제품의 방향을 확정한 상태에서 이를 정당화하려고 테스트를 진행하는 것입니다. 이는 테스트의 목적을 왜곡하고, 실제 사용자 피드백을 반영할 기회를 놓치게 만듭니다. 이를 방지하려면 제품 방향성이 고정되기 전에 가능한 한 초기 단계에서 테스트를 진행해야 하며, 제한된 리소스 속에서도 작은 규모의 테스트라도 실행해 사용자 중심의 개선점을 발견하는 것이 중요합니다."
+    },
+    {
+        "id": 13,
+        "type": "fill_blank",
+        "question": "리서치 세션을 직접 보는 것은 많은 팀에게 좋은 경험이 된다. 그들이 예상하기에는 ______ 테스트 를 완료하기 위해 사용자가 생하는 모습을 목격하고 나면, 전체 디자인 프로세스의 목적을 더 수월하게 이해할 수 있다.",
+        "answer": "쉬운",
+        "chapter": "사용자 테스트",
+        "explanation": "리서치 세션에서 사용자가 기본적인 태스크를 완료하는 데 어려움을 겪는 모습을 직접 보는 것은 팀에게 중요한 깨달음을 줍니다. 쉽다고 예상되는 기본 태스크가 예상보다 복잡하게 느껴질 수 있다는 점을 목격하면, 디자인 프로세스의 목적이 단순히 기능 구현이 아니라 사용자 관점에서의 직관적이고 효과적인 솔루션을 만드는 데 있음을 더 깊이 이해할 수 있습니다."
+    },
+    {
+        "id": 14,
+        "type": "choice",
+        "question": "스케치에 대한 설명으로 옳지 않은것은?",
+        "options": [
+            {"id": "A", "type": "text", "content": "그림과 다르게 최소한 요소만 이용"},
+            {"id": "B", "type": "text", "content": "미적으로 아릅답게 그려야 한다"}
+        ],
+        "answer": "B",
+        "chapter": "아이디어 탐구하기",
+        "explanation": "스케치는 아이디어의 본질적인 측면을 시각적으로 담아내는것이다. 완벽성과같은 미적 아름다움을 목표로 하지 않고 아이디어가 어떻게 작동하는지에 대한 가장 핵심적인 측면을 명확히 표현해야한다."
+    },
+    {
+        "id": 15,
+        "type": "choice",
+        "question": "“스케치 마인드셋 받아들이기”에 포함되는 것은?",
+        "options": [
+            {"id": "A", "type": "text", "content": "솔루션에 대해 더 깊이 생각하기"},
+            {"id": "B", "type": "text", "content": "그림 연습하기"}
+        ],
+        "answer": "A",
+        "chapter": "아이디어 탐구하기",
+        "explanation": "“스케치 마인드셋 받아들이기”에는 솔루션에 대해 더 깊이 생각하기, 실험하기, 커뮤니케이션하기가 포함됩니다. 스케치는 미적으로 아름답게 그리는 것이 아니라, 아이디어의 본질적인 측면을 명확히 나타내는 데 초점이 맞춰져 있습니다."
+    },
+    {
+        "id": 16,
+        "type": "choice",
+        "question": "종이를 8등분으로 접은 후 서로 다른 방법으로 이슈를 해결하려 노력한다. 제한된 시간 내에 스케치를 진행하며 팀 단위에 적합한 방식이다. 다음이 설명하는 것은?",
+        "options": [
+            {"id": "A", "type": "text", "content": "크레이지 에이트"},
+            {"id": "B", "type": "text", "content": "카드소팅"}
+        ],
+        "answer": "A",
+        "chapter": "아이디어 탐구하기",
+        "explanation": "“크레이지 에이트”는 제한된 시간 내에 서로 다른 아이디어를 빠르게 생성하기 위한 스케치 방식입니다. 카드 소팅은 다른 사용자 중심의 정보 구조 설계 방법에 해당합니다."
+    },
+    {
+        "id": 17,
+        "type": "choice",
+        "question": "‘스케치’로 옳은 것은?",
+        "options": [
+            {"id": "A", "type": "image", "content": "/quiz_assets/17_A.png"},
+            {"id": "B", "type": "image", "content": "/quiz_assets/17_B.png"}
+        ],
+        "answer": "A",
+        "chapter": "아이디어 탐구하기",
+        "explanation": "“스케치”는 아이디어의 본질적인 측면을 시각적으로 담아내는 것입니다. 전반적인 화면 간의 관계를 나타낸 B는 “와이어프레임”에 해당합니다."
+    },
+    {
+        "id": 18,
+        "type": "choice",
+        "question": "‘스토리보드’로 옳은 것은?",
+        "options": [
+            {"id": "A", "type": "image", "content": "/quiz_assets/18_A.png"},
+            {"id": "B", "type": "image", "content": "/quiz_assets/18_B.png"}
+        ],
+        "answer": "A",
+        "chapter": "아이디어 탐구하기",
+        "explanation": "“스토리보드”는 스토리의 뼈대를 설명하기 위해 이미지를 순서대로 보여주는 것입니다. 아이디어의 본질을 나타낸 B는 “스케치”에 해당합니다."
+    },
+    {
+        "id": 19,
+        "type": "choice",
+        "question": "모든 것을 강조할 수는 없다. 탐구 과정에서 확인한 충돌, 모순을 드러내는 것은 적절한 균형을 찾는 데에 도움을 줄 수 있다. 다음이 설명하는 것은?",
+        "options": [
+            {"id": "A", "type": "text", "content": "완벽은 선의 적이다."},
+            {"id": "B", "type": "text", "content": "트레이드오프를 가시화하라."}
+        ],
+        "answer": "A",
+        "chapter": "아이디어 탐구하기",
+        "explanation": "“완벽은 선의 적이다”는 단순히 미적으로 좋아 보이게 하는 데 시간을 쏟을 필요 없이 중요한 부분에 시간을 투자해야 한다는 것입니다."
+    },
+    {
+        "id": 20,
+        "type": "choice",
+        "question": "커뮤니케이션을 통해 설득해야 되는 대상자가 아닌 사람은?",
+        "options": [
+            {"id": "A", "type": "text", "content": "경쟁사 직원"},
+            {"id": "B", "type": "text", "content": "디자이너들"}
+        ],
+        "answer": "A",
+        "chapter": "아이디어 탐구하기",
+        "explanation": "커뮤니케이션을 통해 설득해야 하는 대상자에는 디자이너, 개발자, 의사결정권자, 사용자가 있습니다. 경쟁사 직원은 이에 해당하지 않습니다."
+    },
+    {
+        "id": 21,
+        "type": "choice",
+        "question": "데이터 분석 목표를 이루는 요소인 것은?",
+        "options": [
+            {"id": "A", "type": "text", "content": "행동 지표"},
+            {"id": "B", "type": "text", "content": "비용적 측면"}
+        ],
+        "answer": "A",
+        "chapter": "Data-Driven UX",
+        "explanation": "데이터 분석 목표는 행동 지표, 정량적 수치, 달성 기간으로 구성됩니다. 비용적 측면은 이에 포함되지 않습니다."
+    },
+    {
+        "id": 22,
+        "type": "choice",
+        "question": "좋은 KPI의 특징으로 적합한 것은?",
+        "options": [
+            {"id": "A", "type": "text", "content": "기업의 행동을 일으킬 수 있다."},
+            {"id": "B", "type": "text", "content": "정량적으로 나타낼 수 없다"}
+        ],
+        "answer": "A",
+        "chapter": "Data-Driven UX",
+        "explanation": "좋은 KPI는 측정과 비교가 가능하며 기업의 행동을 이끌 수 있고, 누구나 이해하기 쉬운 특징을 갖고 있습니다."
+    },
+    {
+        "id": 23,
+        "type": "choice",
+        "question": "KPI에 관한 설명으로 적절하지 않은 것은?",
+        "options": [
+            {"id": "A", "type": "text", "content": "목표의 정량적 수치이다."},
+            {"id": "B", "type": "text", "content": "서비스 기획 후에 수립하는 것이 좋다"}
+        ],
+        "answer": "B",
+        "chapter": "Data-Driven UX",
+        "explanation": "KPI는 서비스 운영 전에 수립하는 것이 좋습니다."
+    },
+    {
+        "id": 24,
+        "type": "choice",
+        "question": "데이터로 알 수 있는 UX 정보로 적합한 것은?",
+        "options": [
+            {"id": "A", "type": "text", "content": "웹 사이트 사용자의 방문 규모 현황"},
+            {"id": "B", "type": "text", "content": "웹 사이트 사용자의 가족관계"}
+        ],
+        "answer": "A",
+        "chapter": "Data-Driven UX",
+        "explanation": "데이터로 알 수 있는 UX 정보에는 사용자의 방문 규모 현황, 전환율 등이 포함되며, 개인적인 가족관계 정보는 포함되지 않습니다."
+    },
+    {
+        "id": 25,
+        "type": "choice",
+        "question": "웹 사이트 사용자의 방문 규모 현황을 알 수 있는 방법이 아닌 것은?",
+        "options": [
+            {"id": "A", "type": "text", "content": "특정 기간 내 일자별 UV당 평균 PV"},
+            {"id": "B", "type": "text", "content": "특정 기간 내 일자별 PV당 평균 UV"}
+        ],
+        "answer": "B",
+        "chapter": "Data-Driven UX",
+        "explanation": "방문 규모 현황을 알기 위해서는 UV당 평균 PV와 같은 방법을 사용하며, PV당 평균 UV는 적절하지 않습니다."
+    },
+    {
+        "id": 26,
+        "type": "fill_blank",
+        "question": "____는 웹 사이트 내 목표를 달성하기 위해 고객에게 행동을 유도하는 버튼이나 배너를 의미한다. 다양한 사이트별 목적에 따라 버튼의 형태와 종류가 달라진다.",
+        "answer": "CTA",
+        "chapter": "Data-Driven UX",
+        "explanation": "CTA(Call to Action)는 목표 달성을 위해 고객에게 행동을 유도하는 버튼이나 배너를 의미합니다."
+    },
+    {
+        "id": 27,
+        "type": "fill_blank",
+        "question": "데이터 분석 목표를 이루는 3가지 요소에는 달성 기간, 정량적 수치, ____가 있다.",
+        "answer": "행동지표",
+        "chapter": "Data-Driven UX",
+        "explanation": "데이터 분석 목표는 행동 지표, 정량적 수치, 달성 기간으로 구성됩니다."
+    },
+    {
+        "id": 28,
+        "type": "choice",
+        "question": "웹 로그 분석 툴에 해당하는 것은?",
+        "options": [
+            {"id": "A", "type": "image", "content": "/quiz_assets/28_A.png"},
+            {"id": "B", "type": "image", "content": "/quiz_assets/28_B.png"}
+        ],
+        "answer": "A",
+        "chapter": "Data-Driven UX",
+        "explanation": "웹 로그 분석 툴에는 Google Analytics, Mixpanel 등이 포함됩니다."
+    },
+    {
+        "id": 29,
+        "type": "choice",
+        "question": "데이터로 알 수 있는 UX 정보를 분석한 결과, 이 중 디바이스 정보를 알 수 있는 것은?",
+        "options": [
+            {"id": "A", "type": "image", "content": "/quiz_assets/29_A.png"},
+            {"id": "B", "type": "image", "content": "/quiz_assets/29_B.png"}
+        ],
+        "answer": "A",
+        "chapter": "Data-Driven UX",
+        "explanation": "디바이스 정보는 A를 통해 알 수 있습니다."
+    },
+    {
+        "id": 30,
+        "type": "choice",
+        "question": "데이터에 관해 올바른 것은?",
+        "options": [
+            {"id": "A", "type": "text", "content": "데이터는 숫자와 수치를 의미한다."},
+            {"id": "B", "type": "text", "content": "데이터를 바탕으로 다양한 환경을 고려하는 자세가 중요하다."}
+        ],
+        "answer": "B",
+        "chapter": "Data-Driven UX",
+        "explanation": "데이터에서는 숫자보다 패턴이 중요하며, 여러 환경을 고려하는 것이 중요합니다."
+    },
+    {
+        "id": 31,
+        "type": "choice",
+        "question": "순 방문자 수를 의미한다. 중복된 페이지 뷰 수를 제거한 것으로 특정 기간 내 실제로 방문한 사용자가 얼마나 되는지를 파악할 수 있다. 다음이 설명하는것은?",
+        "options": [
+            {"id": "A", "type": "text", "content": "UV"},
+            {"id": "B", "type": "text", "content": "PV"}
+        ],
+        "answer": "A",
+        "chapter": "Data-Driven UX",
+        "explanation": "설명에 해당하는 것은 UV(Unique Visitor)입니다. PV(Page View)는 페이지 뷰 수를 의미하며 사용자에게 노출된 횟수를 나타냅니다."
+    },
+    {
+        "id": 32,
+        "type": "fill_blank",
+        "question": "UX 디자이너를 위한 데이터 분석 도구에는 웹 로그 분석툴, --------, A/B Testing 툴 등이 있다.",
+        "answer": "비주얼 애널리틱스",
+        "chapter": "Data-Driven UX",
+        "explanation": "비주얼 애널리틱스는 UX 디자이너를 위한 데이터 분석 도구로 사용자의 행동 데이터를 알기 쉬운 시각화된 정보로 제공합니다. 이를 통해 사용자의 상세 행동을 분석하고 사용성 문제와 감정까지 추측할 수 있습니다."
+    },
+    {
+        "id": 33,
+        "type": "choice",
+        "question": "와이어 프레임에서 전환의 궤도를 표현하는 그림이다. 다음 중에서 자연스럽게 보일 수 있지만, 너무 자주 사용하는 것은 피해야 하는 것은 어느 것인가?",
+        "options": [
+            {"id": "A", "type": "image", "content": "/quiz_assets/33_A.png"},
+            {"id": "B", "type": "image", "content": "/quiz_assets/33_B.png"}
+        ],
+        "answer": "B",
+        "chapter": "와이어프레임/디자인 목업",
+        "explanation": "현실에서 사물은 무게가 있고 중력이 작용하기 때문에 우리의 뇌가 그러한 움직임에 더 익숙합니다. 곡선을 적용하면 자연스러운 효과를 낼 수 있으나, 동작의 대부분을 차지하는 동작은 직선을 사용하는 것이 더 적합할 때가 있습니다."
+    },
+    {
+        "id": 34,
+        "type": "fill_blank",
+        "question": "아이디어 탐구 초기 단계에서는 신속한 드로잉이 가장 효과적인 도구지만, 솔루션을 더 상세히 기술할 필요가 있다. 기능성과 동작을 아주 상세하게 살펴보기 위해 ________을 사용한다.",
+        "answer": "와이어프레임",
+        "chapter": "와이어프레임/디자인 목업",
+        "explanation": "기능성과 동작을 자세히 설계하려면 와이어프레임을 활용해 구조와 흐름을 도식적으로 나타내고, 그래픽의 시각적 디테일은 디자인 목업 단계에서 현실감 있게 구현합니다."
+    },
+    {
+        "id": 35,
+        "type": "choice",
+        "question": "프로토타입을 만들 때 사용되는 툴의 예시 2개이다. 다음 중에서, 복잡한 상호작용이 많은 경우 선택하면 더 좋은 툴은 무엇인가?",
+        "options": [
+            {"id": "A", "type": "image", "content": "/quiz_assets/35_A.png"},
+            {"id": "B", "type": "image", "content": "/quiz_assets/35_B.png"}
+        ],
+        "answer": "B",
+        "chapter": "프로토타입",
+        "explanation": "레이어 기반 인터랙션은 복잡한 상호작용을 직관적으로 설계할 수 있어 더 적합합니다. 특히 다중 상태를 가진 컴포넌트나 즉각적인 변화가 필요한 경우 유리합니다."
+    },
+    {
+        "id": 36,
+        "type": "choice",
+        "question": "종이에 그려 UI를 만든 프로토타입의 예시 2개이다. 다음 중에서, 주관적인 의견이 아닌 사용자의 실제 행동을 기초로 판단할 수 있는 방법은 무엇인가?",
+        "options": [
+            {"id": "A", "type": "image", "content": "/quiz_assets/36_A.png"},
+            {"id": "B", "type": "image", "content": "/quiz_assets/36_B.png"}
+        ],
+        "answer": "A",
+        "chapter": "프로토타입",
+        "explanation": "인터랙티브 프로토타입은 사용자가 실제 제품처럼 조작할 수 있도록 설계되어 실질적인 사용성을 확인하는 데 유리합니다."
+    },
+    {
+        "id": 37,
+        "type": "choice",
+        "question": "사용자 테스트 중 사용자가 이슈를 경험하게 되었다면, 다음 중 옳은 행동은?",
+        "options": [
+            {"id": "A", "type": "image", "content": "/quiz_assets/37_A.png"},
+            {"id": "B", "type": "image", "content": "/quiz_assets/37_B.png"}
+        ],
+        "answer": "B",
+        "chapter": "사용자 테스트",
+        "explanation": "사용자가 잠시 멈췄다면 이를 관찰하며 왜 멈췄는지 분석해야 합니다. 이를 통해 제품의 개선점을 발견할 수 있습니다."
+    },
+    {
+        "id": 38,
+        "type": "choice",
+        "question": "사용성 평가를 위해 총 20명을 모집하였다. 다음 중 효과적으로 테스트를 진행하는 쪽은 어느 쪽인가?",
+        "options": [
+            {"id": "A", "type": "image", "content": "/quiz_assets/38_A.png"},
+            {"id": "B", "type": "image", "content": "/quiz_assets/38_B.png"}
+        ],
+        "answer": "B",
+        "chapter": "사용자 테스트",
+        "explanation": "5명씩 나누어 3번에 걸쳐 테스트하면 문제 수정과 개선 사항 검토를 반복할 수 있어 효과적입니다."
+    },
+    {
+        "id": 39,
+        "type": "choice",
+        "question": "다음은 사용성 평가 리서치 방법 2개이다. 다음 중 태도 기반의 기법에 더 부합하는 방법은 무엇인가?",
+        "options": [
+            {"id": "A", "type": "image", "content": "/quiz_assets/39_A.png"},
+            {"id": "B", "type": "image", "content": "/quiz_assets/39_B.png"}
+        ],
+        "answer": "B",
+        "chapter": "사용자 테스트",
+        "explanation": "태도 기반 기법은 인터뷰나 설문조사와 같은 방식으로 사용자의 주관적 경험을 이해하는 데 초점을 둡니다."
+    },
+    {
+        "id": 40,
+        "type": "choice",
+        "question": "와이어 프레임에서 전환의 속도를 표현하는 그래프이다. 다음 중에서 전환이 빠르게 이루어지고, 끝날 때 즈음 부드럽게 보간이 되게 하고 싶다면 어떤 속도를 써야 하는가?",
+        "options": [
+            {"id": "A", "type": "image", "content": "/quiz_assets/40_A.png"},
+            {"id": "B", "type": "image", "content": "/quiz_assets/40_B.png"}
+        ],
+        "answer": "B",
+        "chapter": "와이어프레임/디자인 목업",
+        "explanation": "Ease In-Out 방식은 부드럽고 자연스러운 전환을 제공합니다."
+    },
+    {
+        "id": 41,
+        "type": "choice",
+        "question": "UX 디자인에서 와이어프레임(Wireframe)의 역할은 무엇입니까?",
+        "options": [
+            {"id": "A", "type": "text", "content": "사용자 인터페이스의 기본 구조와 레이아웃을 시각적으로 나타낸다."},
+            {"id": "B", "type": "text", "content": "완성된 디자인의 색상과 타이포그래피를 포함한 최종 디자인을 제공한다."}
+        ],
+        "answer": "A",
+        "chapter": "UX 디자인 프로세스와 성공 요인",
+        "explanation": "와이어프레임은 사용자 인터페이스의 기본 구조와 요소 배치를 시각적으로 표현한 청사진입니다. 최종 디자인은 와이어프레임이 아닌, 프로토타입이나 시각적 디자인 단계에서 이루어집니다."
+    },
+    {
+        "id": 42,
+        "type": "choice",
+        "question": "UX 디자인 프로세스에서 사용성 테스트의 주요 목적은 무엇입니까?",
+        "options": [
+            {"id": "A", "type": "text", "content": "제품의 기능을 추가하는 것"},
+            {"id": "B", "type": "text", "content": "사용자가 제품을 어떻게 사용하는지 평가하고 개선점을 찾는 것"}
+        ],
+        "answer": "B",
+        "chapter": "UX 디자인 프로세스와 성공 요인",
+        "explanation": "사용성 테스트는 실제 사용자가 제품을 어떻게 사용하는지 관찰하고, 그 과정에서 발생하는 문제점을 찾아내어 제품을 개선하는 데 목적이 있습니다."
+    },
+    {
+        "id": 43,
+        "type": "choice",
+        "question": "UX 설계에서 반복(iterative) 디자인의 장점은 무엇입니까?",
+        "options": [
+            {"id": "A", "type": "text", "content": "디자인 작업 시간을 단축한다."},
+            {"id": "B", "type": "text", "content": "사용자 피드백을 반영해 지속적으로 개선할 수 있다."}
+        ],
+        "answer": "B",
+        "chapter": "UX 디자인 프로세스와 성공 요인",
+        "explanation": "반복 디자인은 사용자의 피드백과 테스트 결과를 기반으로 설계를 점진적으로 개선하여 더 나은 사용자 경험을 제공합니다."
+    },
+    {
+        "id": 44,
+        "type": "choice",
+        "question": "UX 디자인의 성공 지표로 적절한 것은 무엇입니까?",
+        "options": [
+            {"id": "A", "type": "text", "content": "제품의 판매 수익"},
+            {"id": "B", "type": "text", "content": "사용자의 만족도와 재사용 의도"}
+        ],
+        "answer": "B",
+        "chapter": "UX 디자인 프로세스와 성공 요인",
+        "explanation": "UX 디자인의 성공 여부는 사용자가 제품을 사용하며 느끼는 만족도와 이후 다시 사용할 의향에 따라 평가됩니다."
+    },
+    {
+        "id": 45,
+        "type": "fill_blank",
+        "question": "UX 디자인의 5요소는 전략, 범위, 구조, [_____], 표면으로 구성된다.",
+        "answer": "뼈대",
+        "chapter": "UX 디자인 프로세스와 성공 요인",
+        "explanation": "뼈대(Skeleton)는 와이어프레임과 같이 인터페이스와 콘텐츠를 배치하는 레이아웃을 나타냅니다."
+    },
+    {
+        "id": 46,
+        "type": "fill_blank",
+        "question": "사용자 여정 지도는 사용자가 특정 작업을 수행하는 과정에서 경험하는 단계와 [_____]을(를) 시각적으로 표현한 것이다.",
+        "answer": "감정 변화",
+        "chapter": "UX 디자인 프로세스와 성공 요인",
+        "explanation": "사용자 여정 지도는 사용자가 제품을 사용하는 여정을 따라 감정을 기록하여 문제점과 개선 기회를 발견하는 데 도움을 줍니다."
+    },
+    {
+        "id": 47,
+        "type": "fill_blank",
+        "question": "정보 구조는 콘텐츠와 기능을 논리적으로 조직하여 사용자가 [_____]을(를) 쉽게 찾을 수 있도록 돕는다.",
+        "answer": "정보",
+        "chapter": "UX 디자인 프로세스와 성공 요인",
+        "explanation": "정보 구조는 사용자가 원하는 정보를 빠르고 효율적으로 찾을 수 있도록 콘텐츠를 체계적으로 배열하는 데 초점을 둡니다."
+    },
+    {
+        "id": 48,
+        "type": "choice",
+        "question": "UX 리서치에서 '컨텍스트 인터뷰'란 무엇입니까?",
+        "options": [
+            {"id": "A", "type": "text", "content": "사용자에게 설문지를 배포해 데이터를 수집하는 방법"},
+            {"id": "B", "type": "text", "content": "사용자가 실제 환경에서 제품을 사용하는 모습을 관찰하며 인터뷰하는 방법"}
+        ],
+        "answer": "B",
+        "chapter": "UX 디자인의 기본 디자인 계획",
+        "explanation": "컨텍스트 인터뷰는 사용자가 실제 환경에서 제품을 사용하는 상황을 관찰하며 심층 인터뷰를 진행하는 방법으로, 실질적인 사용 경험을 이해하는 데 유용합니다."
+    },
+    {
+        "id": 49,
+        "type": "choice",
+        "question": "UX 디자인에서 페르소나(Persona)의 역할은 무엇입니까?",
+        "options": [
+            {"id": "A", "type": "text", "content": "가상의 사용자 모델을 만들어 디자인 결정에 활용한다."},
+            {"id": "B", "type": "text", "content": "제품의 색상 팔레트를 결정한다."}
+        ],
+        "answer": "A",
+        "chapter": "UX 디자인의 기본 디자인 계획",
+        "explanation": "페르소나는 가상의 사용자 모델로, 실제 사용자 조사를 기반으로 만들어집니다. 이는 디자인 과정에서 사용자의 목표와 행동을 고려하는 데 도움을 줍니다."
+    },
+    {
+        "id": 50,
+        "type": "choice",
+        "question": "다음 중 더 나은 디자인은?",
+        "options": [
+            {"id": "A", "type": "image", "content": "/quiz_assets/50_A.png"},
+            {"id": "B", "type": "image", "content": "/quiz_assets/50_B.png"}
+        ],
+        "answer": "B",
+        "chapter": "와이어프레임/디자인 목업",
+        "explanation": "터치 타깃은 크기가 클수록 사용자가 누르기가 편하며, 모바일 환경에서는 제한된 공간에서 효율적인 설계를 위해 터치 영역을 충분히 제공하는 것이 중요합니다."
     }
 ]
