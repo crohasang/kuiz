@@ -42,13 +42,14 @@ const App = () => {
     }
   };
 
+  //HomePage(랭킹 페이지), UserPage(유저 페이지)에 user의 점수를 표시해야 한다
   return (
     <>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/" element={<HomePage/>} />
+        <Route path="/" element={<HomePage score={score}/>} />
         <Route path="/quiz/*" element={<QuizMain score={score} setScore={setScore} addInCorrectQuestionID={addIncorrectQuestionID} />} />
-        <Route path="/user" element={<UserPage />} />
+        <Route path="/user" element={<UserPage score={score}/>} />
         <Route path="/correction_note" element={<CorrectionNote />} />
         <Route path ="/concept_note" element={<ConceptNote />} />
         <Route path="*" element={<NotFoundPage />} />

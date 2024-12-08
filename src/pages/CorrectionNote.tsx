@@ -205,7 +205,7 @@ const CorrectionNote = () => {
                       font-size: 18px;
                     }
                   `}>
-                    정답: {currentQuestion.answer === 'A' ? '왼쪽' : '오른쪽'}
+                    정답: {currentQuestion.answer === 'A' ? '왼쪽' : (currentQuestion.answer === 'B' ? '오른쪽' : currentQuestion.answer)}
                     <br/>
                     <br/>
                     {currentQuestion.explanation}
